@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="libs/angular.min.js"></script>
+    <script src="js/calclogin.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/model.js"></script>
+    <script src="js/controller.js"></script>
+</head>
+
+<body ng-app="myapp">
+    <form class="calc" ng-controller="MyCtrl">
+        <p class="calc-display">
+            <input type="text" name="output" id="res" value="{{output}}" ng-model="output" class="calc-display-input">
+        </p>
+        <p class="operators">
+            <button type="button" class="calc-button calc-button-red calc-button-big"
+                ng-click='inputData("/")'>÷</button>
+            <button type="button" class="calc-button calc-button-red calc-button-big"
+                ng-click='inputData("*")'>x</button>
+            <button type="button" class="calc-button calc-button-red calc-button-big"
+                ng-click='inputData("-")'>-</button>
+            <button type="button" class="calc-button calc-button-red calc-button-big"
+                ng-click='inputData("+")'>+</button>
+        </p>
+        <p class="calc-row">
+            <button type="button" class="calc-button" ng-click='inputData(n)'
+                ng-repeat="n in [0,1,2,3,4,5,6,7,8,9]">{{n}}</button>
+            <button type="button" class="calc-button" ng-click='inputData(".")'>.</button>
+            <button type="button" class="calc-button" ng-click='clearSrc()'>C</button>
+
+        </p>
+        <p class="calc-row"><button type="button" class="calc-button calc-button-yellow calc-button-big"
+                ng-click="EvalFun()">=</button></p>
+        <!-- <p class="calc-row"><button type="button" class="calc-button calc-button-yellow calc-button-big"
+                ng-click="delete()">Back</button></p> -->
+    </form>
+</body>
+
+</html>
