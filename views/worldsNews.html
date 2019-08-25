@@ -1,0 +1,27 @@
+<div ng-controller='worldsNews'>
+    <h1 style="color:darkgreen">More from World</h1>
+    <ul>
+        <li style="list-style-type: none" ng-repeat="news in data">
+
+            <!-- <div style="width: 100%;height:90%"> -->
+
+            <!-- <span>{{news.date}}</span> -->
+            <img ng-src="{{news.imageUrl}}" alt="Image" style="width:300px;float:right;">
+            <div style="float: right;width: 70%;height: 200px;">
+                <hr>
+                <h3 style="color:black">{{news.newsHeading}}</h3>
+
+                {{news.news}}
+
+
+            </div>
+
+            <!-- </div> -->
+
+
+        </li>
+
+    </ul>
+
+
+</div>
